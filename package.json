@@ -1,0 +1,31 @@
+{
+  "name": "@lexjs/types",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src/**/*.{js,ts}",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write src/**/*.ts",
+    "prebuild": "npm run format && npm run lint:fix && rm -fr ./dist",
+    "build": "tsc",
+    "prepack": "npm run build"
+  },
+  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "author": "Lex Borisoff <lex@borisoff.dev>",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.5.1",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "typescript": "^5.5.4"
+  }
+}

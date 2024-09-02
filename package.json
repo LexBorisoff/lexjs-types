@@ -1,14 +1,23 @@
 {
   "name": "@lexjs/types",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.2",
   "type": "module",
   "scripts": {
+    "format": "prettier --write *.{js,cjs,mjs,ts,cts,mts} src/**/*.ts",
     "lint": "eslint src/**/*.{js,ts}",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write src/**/*.ts",
     "prebuild": "npm run format && npm run lint:fix && rm -fr ./dist",
     "build": "tsc",
     "prepack": "npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts"
+    }
   },
   "keywords": [],
   "files": [
